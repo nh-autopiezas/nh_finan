@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_account_check_tree_date" model="ir.ui.view">
+            <field name="name">account.check.date.tree</field>
+            <field name="model">account.check</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="account_check.view_account_check_tree"/>
+            <field name="arch" type="xml">
+		<tree position="attributes">
+			<attribute name="create">true</attribute>
+		</tree>
+		<field name="journal_id" position="replace" />
+		<field name="bank_id" position="before">
+			<field name="deposit_date" />
+		</field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="check_hold_action_form_view">
+            <field name="name">account.check.hold.wizard.form</field>
+            <field name="model">account.check.hold</field>
+            <field name="arch" type="xml">
+                <form string="Check Action" >
+                    <footer>
+                        <button string="Hold" name="action_hold" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <act_window
+            name="Check Hold"
+            res_model="account.check.hold"
+            src_model="account.check"
+            view_mode="form"
+            target="new"
+            context="{'default_action_type':'hold'}"
+            key2="client_action_multi"
+            id="action_check_hold"/>
+
+
+    </data>
+</openerp>

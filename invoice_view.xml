@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_partner_accounting_form" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.tree</field>
+            <field name="model">account.invoice</field>
+            <field name="priority">2</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+		<field name="number" position="after">
+			<field name="supplier_invoice_number" />
+		</field>
+            </field>
+        </record>
+    </data>
+</openerp>
