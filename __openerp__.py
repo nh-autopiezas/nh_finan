@@ -28,7 +28,8 @@
     'license': 'AGPL-3',
     "depends" : ['account_check'],
     "data" : [
-        'check_view.xml'
+        'check_view.xml',
+	'voucher_view.xml'
         ],
     'test' : [
     ],
