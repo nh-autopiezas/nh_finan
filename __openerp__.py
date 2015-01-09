@@ -29,7 +29,8 @@
     "depends" : ['account_check'],
     "data" : [
         'check_view.xml',
-	'voucher_view.xml'
+	'voucher_view.xml',
+	'invoice_view.xml'
         ],
     'test' : [
     ],
