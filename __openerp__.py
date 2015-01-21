@@ -30,6 +30,7 @@
     "data" : [
         'check_view.xml',
 	'voucher_view.xml',
+	'views/report_journal.xml',
 	'invoice_view.xml'
         ],
     'test' : [

@@ -36,7 +36,7 @@ class res_partner(osv.osv):
 				return False
 		return True
 
-	_constraints = [(_check_document_number, 'CUIT duplicado', ['document_number'])]
+	# _constraints = [(_check_document_number, 'CUIT duplicado', ['document_number'])]
 
 
 res_partner()
