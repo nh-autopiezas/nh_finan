@@ -26,11 +26,12 @@
     'author': 'Moldeo Interactive',
     'website': 'http://business.moldeo.coop',
     'license': 'AGPL-3',
-    "depends" : ['account_check'],
+    "depends" : ['account','account_check'],
     "data" : [
         'check_view.xml',
 	'voucher_view.xml',
 	'views/report_journal.xml',
+	# 'wizard/account_report_print_journal_view.xml',
 	'invoice_view.xml'
         ],
     'test' : [

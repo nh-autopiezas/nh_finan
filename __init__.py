@@ -21,3 +21,4 @@
 
 import check_action
 import res_partner
+import account

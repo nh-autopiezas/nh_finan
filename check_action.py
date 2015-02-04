@@ -50,3 +50,22 @@ class account_check_hold(osv.osv_memory):
 	
 
 account_check_hold()
+
+class account_check_fondo_fijo(osv.osv_memory):
+	_name = 'account.check.fondo_fijo'
+
+	def action_fondo_fijo(self, cr, uid, ids, context=None):
+		check_obj = self.pool.get('account.check')
+		check_ids = context['active_ids']
+		for check_id in check_ids:
+			check_object = check_obj.browse(cr,uid,check_id)
+			if check_object.state == 'holding' and check_object.type == 'third':
+				vals = {
+					'fondo_fijo': True,
+					'type': 'third',	
+					}
+				return_id = check_obj.write(cr,uid,check_object.id,vals)
+		return None
+	
+
+account_check_fondo_fijo()

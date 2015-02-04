@@ -2,6 +2,8 @@
 <openerp>
     <data>
 
+	<!-- HOLD -->
+
         <record id="view_account_check_tree_date" model="ir.ui.view">
             <field name="name">account.check.date.tree</field>
             <field name="model">account.check</field>
@@ -43,6 +45,34 @@
             key2="client_action_multi"
             id="action_check_hold"/>
 
+	<!-- FONDO FIJO -->
+
+        <record model="ir.ui.view" id="check_hold_action_form_view">
+            <field name="name">account.check.fondo_fijo.wizard.form</field>
+            <field name="model">account.check.fondo_fijo</field>
+            <field name="arch" type="xml">
+                <form string="Check Action - Fondo Fijo" >
+                    <footer>
+                        <button string="Fondo Fijo" name="action_fondo_fijo" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <act_window
+            name="Pasar a Fondo Fijo"
+            res_model="account.check.fondo_fijo"
+            src_model="account.check"
+            view_mode="form"
+            target="new"
+            context="{'default_action_type':'fondo_fijo'}"
+            key2="client_action_multi"
+            id="action_check_fondo_fijo"/>
+
+	<!-- FONDO FIJO -->
 
     </data>
 </openerp>
